@@ -1,0 +1,224 @@
+<eww>
+  <definitions>
+      <def name="profile">
+          <box orientation="v" space-evenly="true">
+              <box class="pfp"></box>
+              <box class="text">Welcome!</box>
+              <box class="username">@ChocolateBread</box>
+          </box>
+      </def>
+        <def name="shutdown">
+            <box orientation="h" space-evenly="true">
+              <box class="shutdown-btn" orientation="h" halign="center">
+                  <button onclick="shutdown now"></button>
+                </box>
+            </box>
+        </def>
+        <def name="reboot">
+            <box orientation="h" space-evenly="true">
+              <box class="reboot-btn" orientation="h" halign="center">
+                  <button onclick="reboot"></button>
+                </box>
+            </box>
+        </def>
+        <def name="quit">
+            <box orientation="h" space-evenly="true">
+              <box class="quit-btn" orientation="h" halign="center">
+                  <button onclick="eww close shutdown & eww close reboot & eww close quit"></button>
+                </box>
+            </box>
+        </def>
+        <def name="quit_main">
+            <box orientation="h" space-evenly="true">
+              <box class="quit-btn" orientation="h" halign="center">
+                  <button onclick="eww close profile & eww close player_control & eww close player & eww close date & eww close system & eww close quit_main"></button>
+                </box>
+            </box>
+        </def>
+        <def name="firefox">
+            <box orientation="h" space-evenly="true">
+              <box class="firefox-btn" orientation="h" halign="center">
+                  <button onclick="sh ~/.config/eww/scripts/firefox"></button>
+                </box>
+            </box>
+        </def>
+        <def name="spotify">
+            <box orientation="h" space-evenly="true">
+              <box class="spotify-btn" orientation="h" halign="center">
+                  <button onclick="sh ~/.config/eww/scripts/spotify"></button>
+                </box>
+            </box>
+        </def>
+        <def name="atom">
+            <box orientation="h" space-evenly="true">
+              <box class="atom-btn" orientation="h" halign="center">
+                  <button onclick="atom"></button>
+                </box>
+            </box>
+        </def>
+        <def name="thunar">
+            <box orientation="h" space-evenly="true">
+              <box class="thunar-btn" orientation="h" halign="center">
+                  <button onclick="sh ~/.config/eww/scripts/thunar"></button>
+                </box>
+            </box>
+        </def>
+        <def name="quit_launcher">
+            <box orientation="h" space-evenly="true">
+              <box class="quit_launcher-btn" orientation="h" halign="center">
+                  <button onclick="eww close firefox & eww close spotify & eww close atom & eww close quit_launcher & eww close thunar"></button>
+                </box>
+            </box>
+        </def>
+        <def name="date">
+            <box orientation="v" space-evenly="true">
+                <box orientation="h" class="time">
+                    <box class="hour">{{hour}}</box>
+                    <box class="semicolon">:</box>
+                    <box class="minute">{{minute}}</box>
+                </box>
+                <box class="day">{{day}}</box>
+            </box>
+        </def>
+        <def name="player">
+            <box orientation="h" space-evenly="true">
+                <box class="song-art" style="background-image: url('{{art}}');">{{song_art}}</box>
+                <box class="song-data" orientation="v" space-evenly="false">
+                    <box class="song-title">{{song_title}}</box>
+                </box>
+            </box>
+        </def>
+        <def name="player_control">
+            <box orientation="h" space-evenly="true">
+              <box class="player-btn" orientation="h" halign="center">
+                  <button onclick="playerctl previous"></button>
+                  <button class="pause-play" onclick="playerctl play-pause"></button>
+                  <button onclick="playerctl next"></button>
+              </box>
+            </box>
+        </def>
+        <def name="system">
+            <box orientation="v" space-evenly="false">
+                <box class="ram-bar" orientation="h">
+                    <box class="label-ram-bar">RAM</box>
+                    <scale min="0" max="101" active="false" value="{{used_ram}}"></scale>
+                </box>
+                <box class="cpu-bar" orientation="h">
+                    <box class="label-cpu-bar">CPU</box>
+                    <scale min="0" max="101" active="false" value="{{brightness}}"></scale>
+                </box>
+                <box class="vol-bar" orientation="h">
+                    <box class="label-vol-bar">VOL</box>
+                    <scale min="0" max="101" active="false" value="{{volume}}"></scale>
+                </box>
+            </box>
+        </def>
+</definitions>
+
+    <variables>
+        <!-- TIME VARS -->
+        <script-var name="minute" interval="10s">date "+%M"</script-var>
+        <script-var name="hour" interval="5m">date "+%H"</script-var>
+
+        <!-- DATE VARS -->
+      <script-var name="day" interval="12h">~/.config/eww/scripts/getDay</script-var>
+
+        <!-- PLAYER VARS -->
+        <script-var name="art" interval="5s">~/.config/eww/scripts/echoSongArt</script-var>
+        <script-var name="song_art" interval="5s">~/.config/eww/scripts/getSongArt</script-var>
+        <script-var name="song_title" interval="2s">~/.config/eww/scripts/getSongTitle</script-var>
+
+        <!-- SYSTEM VARS -->
+
+        <script-var name="used_ram" interval="2s">~/.config/eww/scripts/getUsedRam</script-var>
+        <script-var name="volume" interval="1s">~/.config/eww/scripts/getVolume</script-var>
+        <script-var name="brightness" interval="1s">~/.config/eww/scripts/getCpu</script-var>
+    </variables>
+
+    <windows>
+        <window name="profile">
+            <geometry x="675px" y="325px" width="250px" height="320px"/>
+            <widget>
+                <profile/>
+            </widget>
+        </window>
+        <window name="date">
+            <geometry x="950px" y="324px" width="310px" height="100px"/>
+            <widget>
+                <date/>
+            </widget>
+        </window>
+        <window name="shutdown">
+            <geometry x= "1830px" y="401px" width="70px" height="70px"/>
+            <widget>
+                <shutdown/>
+            </widget>
+        </window>
+        <window name="firefox">
+            <geometry x= "725px" y="982px" width="70px" height="70px"/>
+            <widget>
+                <firefox/>
+            </widget>
+        </window>
+        <window name="spotify">
+            <geometry x= "825px" y="982px" width="70px" height="70px"/>
+            <widget>
+                <spotify/>
+            </widget>
+        </window>
+        <window name="atom">
+            <geometry x= "925px" y="982px" width="70px" height="70px"/>
+            <widget>
+                <atom/>
+            </widget>
+        </window>
+        <window name="thunar">
+            <geometry x= "1025px" y="982px" width="70px" height="70px"/>
+            <widget>
+                <thunar/>
+            </widget>
+        </window>
+        <window name="quit_launcher">
+            <geometry x="1125px" y="982px" width="70px" height="70px"/>
+            <widget>
+                <quit_launcher/>
+            </widget>
+        </window>
+        <window name="reboot">
+            <geometry x="1830px" y="490px" width="70px" height="70px"/>
+            <widget>
+                <reboot/>
+            </widget>
+        </window>
+        <window name="quit">
+            <geometry x="1830px" y="580px" width="70px" height="70px"/>
+            <widget>
+                <quit/>
+            </widget>
+        </window>
+        <window name="quit_main">
+            <geometry x="1160px" y="665px" width="100px" height="100px"/>
+            <widget>
+                <quit_main/>
+            </widget>
+        </window>
+        <window name="player">
+            <geometry x="675px" y="665px" width="300px" height="100px"/>
+            <widget>
+                <player/>
+            </widget>
+        </window>
+        <window name="player_control">
+            <geometry x="1000px" y="665px" width="137px" height="100px"/>
+            <widget>
+                <player_control/>
+            </widget>
+        </window>
+        <window name="system">
+            <geometry x="950px" y="485px" width="310px" height="160px"/>
+            <widget>
+                <system/>
+            </widget>
+        </window>
+    </windows>
+</eww>

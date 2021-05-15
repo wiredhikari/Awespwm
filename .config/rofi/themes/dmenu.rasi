@@ -1,0 +1,38 @@
+
+* {
+    background-color:      #292b34;
+    border-color:          #30333d;
+    text-color:            #ffffff;
+    font:            "Fira Code 11";
+}
+
+window {
+    anchor:     south;
+    location:   south;
+    width:     100%;
+    padding:    4px;
+    children:   [ horibox ];
+}
+
+horibox {
+    orientation: horizontal;
+    children:   [ prompt, entry, listview ];
+}
+
+listview {
+    layout:     horizontal;
+    spacing:    10px;
+    lines:      100;
+}
+
+entry {
+    expand:     false;
+    width:      10em;
+}
+
+element {
+    padding: 2px 5px;
+}
+element selected {
+    color: #a8bbef;
+}

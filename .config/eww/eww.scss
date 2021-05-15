@@ -1,0 +1,261 @@
+* {
+    all: unset;
+}
+
+window {
+    color: #e0def5;
+    font-family: "Font Awesome 5";
+}
+
+.player_control, .quit_main, .files, .profile, .weather, .system, .date, .shutdown, .reboot, .quit, .volume, .player, .firefox, .spotify, .atom, .quit_launcher, .thunar {
+    background-color: #101622;
+    border-radius: 10px;
+    font-family: "FontAwesome5Free";
+    border-radius: 12px;
+    border: 0px solid;
+    border-color: #253047;
+}
+
+.titlebar {
+    color: #AAC9CE;
+    font-size: 20px;
+    font-weight: bolder;
+
+    margin-top: -685px;
+    margin-left: -20px;
+}
+
+.pfp {
+  background-image: url("/home/k/.config/eww/Profile.jpg");
+  background-size: 160px;
+
+    margin-top: 40px;
+    margin-bottom: -70px;
+    margin-left: 45px;
+    margin-right: 45px;
+    padding-right: 10px;
+    border-radius: 50px;
+}
+
+.text {
+    margin-bottom: -100px;
+    font-family: "Iosevka";
+    color: #eddfed;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 50px;
+}
+
+.username {
+    margin-bottom: -40px;
+    font-family: "Iosevka";
+    color: #41505c;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.time {
+    margin: 15px 60px -30px 61px;
+    font-size: 50px;
+    font-family: "Iosevka";
+}
+
+.semicolon {
+    margin: 0px;
+    margin-top: -5px;
+    color: #5878b5;
+    font-family: "Iosevka";
+}
+
+.day {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-family: "Iosevka";
+    font-size: 16px;
+    font-weight: 500;
+    color: #e4cfe6;
+}
+
+.song-data {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Iosevka";
+    margin: 17px 0px 0px -25px;
+}
+
+.song-title {
+    font-family: "Iosevka";
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    padding-right: 30px;
+    padding-top: 18px;
+}
+
+.player-btn {
+    padding: 25px 0px 5px;
+    padding-left: 14px;
+    margin-top: -5px;
+}
+
+.player-btn button {
+    color: #e4cfe6;
+
+    font-family: "FontAwesome5";
+    font-weight: normal;
+    padding-right: 20px;
+    padding-bottom: 11px;
+}
+
+.player-btn button:hover {
+    color: #d6d6d6;
+}
+
+.player-btn pause-play button  {
+    font-size: 11px;
+}
+
+.song-art {
+    background-size: 85px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 56px;
+
+    border-radius: 6px;
+}
+
+.system {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.system slider {
+    all: unset;
+}
+
+.label-ram-bar, .label-vol-bar, .label-cpu-bar {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Iosevka";
+    margin-top: 20px;
+    margin-left: -37px;
+}
+
+.label-ram-bar {
+    margin-top: 25px;
+    color: #e1ca8f;
+}
+
+.label-vol-bar {
+    margin-left: -35px;
+    color: #79aeeb;
+}
+
+.label-cpu-bar {
+    margin-left: -35px;
+    color: #95e5a2;
+}
+
+
+ .vol-bar scale trough highlight {
+ all: unset;
+ background-image: linear-gradient(to right, #79aeeb, #4f8fd9);
+ color: #a3d4ae;
+ border-radius: 10px;
+ }
+
+.ram-bar scale trough highlight {
+ all: unset;
+ background-image: linear-gradient(to right, #e1ca8f, #eec865);
+ color: #a3d4ae;
+ border-radius: 10px;
+ }
+
+.cpu-bar scale trough highlight {
+  all: unset;
+  background-image: linear-gradient(to right, #95e5a2, #7eed8f);
+  color: #a3d4ae;
+  border-radius: 10px;
+  }
+
+.ram-bar scale trough {
+	all: unset;
+	background-color: #30333d;
+	border-radius: 40px;
+
+	min-height: 10px;
+    min-width: 150px;
+
+    margin: 23px 45px 0px -50px;
+}
+
+.vol-bar scale trough, .cpu-bar scale trough {
+	all: unset;
+	background-color: #30333d;
+	border-radius: 40px;
+
+	min-height: 10px;
+    min-width: 150px;
+
+    margin: 8px 45px -10px -50px;
+}
+
+.shutdown-btn button {
+    color: #e6568b;
+    font-weight: normal;
+    padding-left: 1px;
+    padding-top: 2px;
+    font-size: 30px;
+}
+
+.reboot-btn button {
+    color: #eec865;
+    font-weight: normal;
+    padding-left: 1px;
+    padding-top: 2px;
+    font-size: 30px;
+}
+
+.quit-btn button {
+    color: #6d8ec9;
+    padding-left: 2px;
+    padding-top: 0px;
+    font-size: 33px;
+}
+
+.firefox-btn button {
+    color: #e6568b;
+    padding-right: 8px;
+    padding-top: 4px;
+    font-size: 23px;
+}
+
+.spotify-btn button {
+    color: #7fd28c;
+    padding-right: 5px;
+    padding-top: 3px;
+    font-size: 25px;
+}
+
+.atom-btn button {
+    color: #79aeeb;
+    padding-right: 1px;
+    padding-top: 1px;
+    font-size: 23px;
+}
+
+.thunar-btn button {
+    color: #eec865;
+    padding-left: 4px;
+    padding-top: 1px;
+    font-size: 23px;
+}
+
+.quit_launcher-btn button {
+    color: #d6d6d6;
+    padding-right: 0px;
+    padding-top: 1px;
+    font-size: 25px;
+}
